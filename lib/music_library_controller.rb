@@ -12,7 +12,7 @@ class MusicLibraryController
   def call 
     
     response = gets.chomp  
-    until response == exit
+    until response == "exit"
       
   # if response != "exit"
     
