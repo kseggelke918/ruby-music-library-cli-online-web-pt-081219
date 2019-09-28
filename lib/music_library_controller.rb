@@ -10,7 +10,7 @@ class MusicLibraryController
   end 
   
   def call 
-    
+    binding.pry 
     response = gets.chomp  
     until response == "exit"
       
