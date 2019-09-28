@@ -11,10 +11,10 @@ class MusicLibraryController
   
   def call 
     binding.pry 
-    response = gets.chomp  
+    
+    response = ""
+ 
     until response == "exit"
-      
-  # if response != "exit"
     
     puts "Welcome to your music library!"
     puts "To list all of your songs, enter 'list songs'."
@@ -25,6 +25,8 @@ class MusicLibraryController
     puts "To play a song, enter 'play song'."
     puts "To quit, type 'exit'."
     puts "What would you like to do?"
+    
+    response = gets.chomp 
   
     case response 
       when 'list songs'
