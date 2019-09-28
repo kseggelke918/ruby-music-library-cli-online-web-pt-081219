@@ -9,11 +9,8 @@ class MusicLibraryController
    music.import 
   end 
   
-  def call 
-    #binding.pry 
-    
+  def call
     response = ""
- 
     until response == "exit"
     
     puts "Welcome to your music library!"
