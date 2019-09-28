@@ -10,6 +10,12 @@ class MusicLibraryController
   end 
   
   def call 
+    
+    response = gets.chomp  
+    until response == exit
+      
+  # if response != "exit"
+    
     puts "Welcome to your music library!"
     puts "To list all of your songs, enter 'list songs'."
     puts "To list all of the artists in your library, enter 'list artists'."
@@ -19,12 +25,27 @@ class MusicLibraryController
     puts "To play a song, enter 'play song'."
     puts "To quit, type 'exit'."
     puts "What would you like to do?"
-    
-    response = gets.chomp  
-    until response == "exit"
-      response = gets.chomp
+  
+    case response 
+      when 'list songs'
+        list_songs
+      when 'list artists'
+        list_artists
+      when 'list genres'
+        list_genres
+      when 'list artist'
+        list_songs_by_artist
+      when 'list genre'
+        list_songs_by_genre
+      when 'play song'
+        play_song
+      else 
+        "What would you like to do?"
+      end 
     end 
+
   end 
+    
   
   def list_songs
     Song.all.uniq.sort {|a, b| a.name <=> b.name}.each_with_index do |song, i|
@@ -80,7 +101,7 @@ class MusicLibraryController
       puts "Playing #{song.name} by #{song.artist.name}"
     end 
   end 
-    
+  
 end 
 
 
